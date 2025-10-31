@@ -7,11 +7,11 @@ ENV PYTHONUNBUFFERED=1
 
 COPY requirements.txt .
 
-RUN python manage.py collectstatic --noinput
-
 RUN pip install -r requirements.txt
 
 COPY . .
+
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
